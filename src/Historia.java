@@ -56,21 +56,21 @@ public class Historia {
         // historia -> pergunta -> ignora
         // historia -> adeus 
 
+
         historia.Mostrar();
         if (historia.valor == 1){
             pergunta.Mostrar();
-            if (pergunta.valor == 1){
+            if(pergunta.valor==1){
                 atende.Mostrar();
             }
-            else if(pergunta.valor == 2){
-                ignorar.Mostrar();
-            }
+        }   else if(pergunta.valor==2){
+            ignorar.Mostrar();
         }
-        else if(historia.valor == 2){
+        else if (historia.valor == 2){
             adeus.Mostrar();
         }
-
+        else{
+            System.out.println("Escolha invalida");
         }
-    }
-  
-   
+    }}
+
