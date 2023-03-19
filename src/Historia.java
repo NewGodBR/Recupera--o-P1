@@ -16,7 +16,7 @@ public class Historia {
         luccas.getNome() +" um cientista que pesquisava uma forma de acabar com \n"+
         "o aquecimento global, que estava avançando drasticamente nos ultimos anos, esbarra 'sem querer' em "+  ingrid.getNome()+", "+
         luccas.getNome()+ " se encanta com a graça de "+ ingrid.getNome() +" e seu livro misterioso em mãos e se desculpa .\n"+
-        ingrid.getNome() +" decide [perguntar] o que ele procura ou se [despedir]?",
+        ingrid.getNome() +" decide perguntar o que ele procura ou se despedir?",
         "perguntar", 
         "despedir", 
         luccas, -20);  
@@ -24,7 +24,7 @@ public class Historia {
         Capitulo pergunta = new Capitulo(
             luccas.getNome() + " então se apresenta e explica sobre sua pesquisa, tentando parecer 'interessante' e pergunta sobre o livro em suas mãos, "+
              ingrid.getNome() +" explica que ela estava organizando os livros e decide continuar conversando com o rapaz até que seu celular toca\n"+
-            luccas.getNome() +" [atende] ou decide [ignorar] a ligação?", 
+            luccas.getNome() +" atende ou decide ignorar a ligação?", 
             "atende", 
             "ignorar", 
             ingrid, -10);
@@ -43,27 +43,33 @@ public class Historia {
         null, 
         luccas, -80);
         
-        Capitulo despedir = new Capitulo(
+        Capitulo adeus = new Capitulo(
         ingrid.getNome() +" estão vai embora e "+luccas.getNome()+" continua pesquisando e eventualmente ele encontra uma pesquisa russa misteriosa e"+
         " acaba com o aquecimento global", 
         null, 
         null, 
         luccas, 20);
 
-        //Historia > pergunta > atende
-        // historia > pergunta > ignora
-        // historia > adeus 
+      // fazer a historia funcionar com capitulos
+        
+        //Historia -> pergunta -> atende
+        // historia -> pergunta -> ignora
+        // historia -> adeus 
+
         historia.Mostrar();
-        if (historia.valor = 1){
+        if (historia.valor == 1){
             pergunta.Mostrar();
-            if(pergunta.valor = 1){
+            if (pergunta.valor == 1){
                 atende.Mostrar();
-                }
+            }
+            else if(pergunta.valor == 2){
+                ignorar.Mostrar();
             }
         }
-
+        else if(historia.valor == 2){
+            adeus.Mostrar();
         }
-
-        // fazer a historia funcionar com capitulos
-        
+        }
+    }
+  
    

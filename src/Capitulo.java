@@ -20,11 +20,11 @@ public class Capitulo {
         this.personagem.setAtencao(this.atencao);
         System.out.println(
                 "-----------\n" +
-                        this.texto +
+                        this.texto + "\n" +
                         this.personagem.getNome() + ": " + this.personagem.getAtencao());
         if(escolha1 != null && escolha2 != null){
-        System.out.println(this.escolha1 +
-                this.escolha2);
+        System.out.println("["+this.escolha1 + "] ["+
+                this.escolha2+"]");
         Scanner scanner = new Scanner(System.in);
         String escolha;
         escolha = scanner.nextLine();
@@ -37,6 +37,6 @@ public class Capitulo {
         else{
             System.out.println("Escolha invalida");
         }
+
     }
-    }
-}
+}}
