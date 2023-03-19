@@ -21,9 +21,18 @@ public class Cap {
                 "-----------\n" +
                         this.texto + "\n" +
                         this.personagem.getNome() + ": " + this.personagem.getAtencao());
-
-        for (int i = 0; i < this.escolhas.length; i++){
-            System.out.println((i+1)+this.escolhas[i]);
+        if(escolhas != null && escolhas.length >=2){
+            for (int i = 0; i < this.escolhas.length; i++){
+                System.out.println((i+1)+".["+this.escolhas[i]+"]");
+            }
+            Scanner scanner = new Scanner(System.in);
+            String escolha = scanner.nextLine();
+            for (int i = 0;i <escolhas.length; i++){
+                if(escolha.equals(escolhas[i])){
+                    this.valor = i; 
+                }
+                scanner.close();
+            }
        
 }}
 }
