@@ -3,22 +3,27 @@ import java.util.Scanner;
 public class Historia {
     public static void main(String[] args) throws Exception {
 
-        //Definir variáveis e criar escaneador
+        //Definir variáveis e criar escaneador + Personagens
 
         String escolha;
         
         Scanner imput = new Scanner(System.in);
 
+        Personagem luccas = new Personagem("Luccas", 100);
+        Personagem ingrid = new Personagem("Ingrid", 100);
+
         // Apresentação da historia
 
         System.out.println(
         " ENCONTRO DO DESASTRE \n"+
-        "Ingrid trabalhava em uma biblioteca quando um certo dia,\n"+
-        "Luccas um cientista que pesquisiva uma forma de acabar com \n"+
-        "o aquecimento global, que estava avançando drasticamente nos ultimos anos, esbarra 'sem querer' em Ingrid, "+
-        "Luccas se desculpa e se encanta com a graça de Ingrid e seu livro misterioso em mãos."+
-        "\n Ingrid decide [perguntar] o que ele procura ou se [despedir]?"
+        ingrid.getNome()+" trabalhava em uma biblioteca quando um certo dia,\n"+
+        luccas.getNome() +" um cientista que pesquisava uma forma de acabar com \n"+
+        "o aquecimento global, que estava avançando drasticamente nos ultimos anos, esbarra 'sem querer' em "+  ingrid.getNome()+", "+
+        luccas.getNome()+ " se encanta com a graça de "+ ingrid.getNome() +" e seu livro misterioso em mãos e se desculpa .\n"+
+        ingrid.getNome() +" decide [perguntar] o que ele procura ou se [despedir]?"
         );
+        luccas.setAtencao(-20);
+        luccas.show();
 
         // Tomada de Decisão
 
@@ -28,23 +33,29 @@ public class Historia {
         
         if (escolha.equals("perguntar")){
             // continuação
-            System.out.println("Luccas então se apresenta e explica sobre sua pesquisa, tentando parecer 'interessante' e pergunta sobre o livro em suas mãos"+
-            " Ingrid explica que ela estava organizando os livros e decide continuar conversando com o rapaz até que seu celular toca"+
-            "\n Luccas [atende] ou decide [ignorar] a ligação?"
+            System.out.println(luccas.getNome() + " então se apresenta e explica sobre sua pesquisa, tentando parecer 'interessante' e pergunta sobre o livro em suas mãos, "+
+             ingrid.getNome() +" explica que ela estava organizando os livros e decide continuar conversando com o rapaz até que seu celular toca\n"+
+            luccas.getNome() +" [atende] ou decide [ignorar] a ligação?"
             );
+            ingrid.setAtencao(-10);
+            ingrid.show();
+           
             // Tomada de Decisão
             escolha = imput.nextLine();
             if (escolha.equals("ignorar")){
+                luccas.setAtencao(-80);
                 System.out.println(
-                "Luccas ignora a ligação e Ingrid começa a se interessar por ele mais e mais, e terminam juntos. "+
-                "No fim... Luccas não termina seu projeto e o mundo sofre com o Aquecimento global até seu fim em 2046"
+                luccas.getNome() +" ignora a ligação e "+ ingrid.getNome()+ " começa a se interessar por ele mais e mais, e terminam juntos. "+
+                "No fim... "+ luccas.getNome() +" não termina seu projeto e o mundo sofre com o Aquecimento global até seu fim em 2046"
                 );
             }
             else if (escolha.equals("atende")){
-                System.out.println(
-                " Luccas então decide atender a ligação e se despede de Ingrid, A ligação em si não era relevante porém, "+
-                "Ingrid termina de organizar os livros, e Luccas acaba encontrando o livro em uma estante que continha o sucesso de sua pesquisa."
+                luccas.setAtencao(20);
+                luccas.show();System.out.println(
+                luccas.getNome() +" então decide atender a ligação e se despede de " + ingrid.getNome()+ ", A ligação em si não era relevante porém, "+
+                ingrid.getNome()+ " termina de organizar os livros, e "+ luccas.getNome()+ " acaba encontrando o livro em uma estante e que continha o sucesso de sua pesquisa."
                 );
+               
             }
             else{
                 System.out.println(
@@ -53,8 +64,9 @@ public class Historia {
             }
         }
         else if (escolha.equals("despedir")){
+            luccas.setAtencao(20);
             System.out.println(
-            "Ingrid estão vai embora e Luccas continua pesquisando e eventualmente ele encontra uma pesquisa russa misteriosa e"+
+            ingrid.getNome() +" estão vai embora e "+luccas.getNome()+" continua pesquisando e eventualmente ele encontra uma pesquisa russa misteriosa e"+
             " acaba com o aquecimento global"
             );
         }
