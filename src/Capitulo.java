@@ -6,6 +6,7 @@ public class Capitulo {
     private String escolha2;
     private Personagem personagem;
     private int atencao;
+    public int valor = 0;
 
     public Capitulo(String texto, String escolha1, String escolha2, Personagem personagem, int atencao) {
         this.texto = texto;
@@ -15,26 +16,27 @@ public class Capitulo {
         this.atencao = atencao;
     }
 
-    public int Mostrar() {
+    public void Mostrar() {
         this.personagem.setAtencao(this.atencao);
         System.out.println(
                 "-----------\n" +
                         this.texto +
                         this.personagem.getNome() + ": " + this.personagem.getAtencao());
+        if(escolha1 != null && escolha2 != null){
         System.out.println(this.escolha1 +
                 this.escolha2);
-        return escolher();
-
-    }
-
-    public int escolher() {
         Scanner scanner = new Scanner(System.in);
         String escolha;
         escolha = scanner.nextLine();
-        if (escolha == this.escolha1) {
-            return 1;
-        } else {
-            return 2;
+        if (escolha.equals(this.escolha1)){
+            this.valor = 1;
         }
+        else if(escolha.equals(this.escolha2)){
+            this.valor = 2;
+        }
+        else{
+            System.out.println("Escolha invalida");
+        }
+    }
     }
 }
