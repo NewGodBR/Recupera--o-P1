@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class Cap {
     private String texto;
-    private String[] escolhas;
+    private Escolha[] escolhas;
     private Personagem personagem;
     private int atencao;
     public int valor;
 
-    public Cap(String texto, String[] escolhas, Personagem personagem, int atencao) {
+    public Cap(String texto, Escolha[] escolhas, Personagem personagem, int atencao) {
         this.texto = texto;
         this.escolhas = escolhas;
         this.personagem = personagem;
@@ -23,15 +23,15 @@ public class Cap {
                         this.personagem.getNome() + ": " + this.personagem.getAtencao());
         if(escolhas != null && escolhas.length >= 2){
             for (int i = 0; i < escolhas.length; i++) {
-                System.out.println((i+1) + ". [" + escolhas[i]+"]");
+                System.out.println((i+1) + ". [" + escolhas[i].nome+"]");
             }
             Scanner scanner = new Scanner(System.in);
             String escolha;
             escolha = scanner.nextLine();
             for (int i = 0; i < escolhas.length; i++) {
-                if (escolha.equalsIgnoreCase(escolhas[i])) {
-                    this.valor = i+1;
-                    return;
+                if (escolha.equalsIgnoreCase(escolhas[i].nome)) {
+                   escolhas[i].proximo.Mostrar();
+                   return;
                 }
             }
             System.out.println("Escolha inválida");
