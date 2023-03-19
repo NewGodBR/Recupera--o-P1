@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
-public class Capitulo {
+public class Cap {
     private String texto;
     private String escolha1;
     private String escolha2;
     private Personagem personagem;
     private int atencao;
-    public int valor = 0;
+    public int valor;
 
-    public Capitulo(String texto, String escolha1, String escolha2, Personagem personagem, int atencao) {
+    public Cap(String texto, String escolha1, String escolha2, Personagem personagem, int atencao) {
         this.texto = texto;
         this.escolha1 = escolha1;
         this.escolha2 = escolha2;
@@ -37,6 +37,7 @@ public class Capitulo {
         else{
             System.out.println("Escolha invalida");
         }
-
+        scanner.close();
     }
+
 }}

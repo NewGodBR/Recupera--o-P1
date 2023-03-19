@@ -3,14 +3,12 @@ public class Historia {
 
         //Definir variáveis e criar escaneador + Personagens
 
-        String escolha;
-        int valor;
-
+        
         Personagem luccas = new Personagem("Luccas", 100);
         Personagem ingrid = new Personagem("Ingrid", 100);
         // Criação dos capitulos:
         
-        Capitulo historia = new Capitulo(
+        Cap historia = new Cap(
             " ENCONTRO DO DESASTRE \n"+
         ingrid.getNome()+" trabalhava em uma biblioteca quando um certo dia,\n"+
         luccas.getNome() +" um cientista que pesquisava uma forma de acabar com \n"+
@@ -21,7 +19,7 @@ public class Historia {
         "despedir", 
         luccas, -20);  
         
-        Capitulo pergunta = new Capitulo(
+        Cap pergunta = new Cap(
             luccas.getNome() + " então se apresenta e explica sobre sua pesquisa, tentando parecer 'interessante' e pergunta sobre o livro em suas mãos, "+
              ingrid.getNome() +" explica que ela estava organizando os livros e decide continuar conversando com o rapaz até que seu celular toca\n"+
             luccas.getNome() +" atende ou decide ignorar a ligação?", 
@@ -29,21 +27,21 @@ public class Historia {
             "ignorar", 
             ingrid, -10);
         
-        Capitulo atende = new Capitulo(
+        Cap atende = new Cap(
             luccas.getNome() +" então decide atender a ligação e se despede de " + ingrid.getNome()+ ", A ligação em si não era relevante porém, "+
             ingrid.getNome()+ " termina de organizar os livros, e "+ luccas.getNome()+ " acaba encontrando o livro em uma estante e que continha o sucesso de sua pesquisa.",
             null, 
             null, 
             luccas, 20);
 
-        Capitulo ignorar = new Capitulo(
+        Cap ignorar = new Cap(
         luccas.getNome() +" ignora a ligação e "+ ingrid.getNome()+ " começa a se interessar por ele mais e mais, e terminam juntos. "+
         "No fim... "+ luccas.getNome() +" não termina seu projeto e o mundo sofre com o Aquecimento global até seu fim em 2046", 
         null, 
         null, 
         luccas, -80);
         
-        Capitulo adeus = new Capitulo(
+        Cap adeus = new Cap(
         ingrid.getNome() +" estão vai embora e "+luccas.getNome()+" continua pesquisando e eventualmente ele encontra uma pesquisa russa misteriosa e"+
         " acaba com o aquecimento global", 
         null, 
@@ -69,6 +67,7 @@ public class Historia {
         else if(historia.valor == 2){
             adeus.Mostrar();
         }
+
         }
     }
   
