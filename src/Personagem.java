@@ -25,9 +25,4 @@ public class Personagem {
         this.nome = nome;
         this.atencao = atencao;
     }
-
-    public void show(){
-        System.out.println(this.nome + " está com atenção de: "+this.atencao);
-    }
-
 }

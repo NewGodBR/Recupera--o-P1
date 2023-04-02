@@ -13,8 +13,10 @@ public class Historia {
          Escolha adeus = new Escolha("despedir",null);
          Escolha atender = new Escolha("Atender",null);
          Escolha ignorar = new Escolha("Ignorar",null);
+
          Escolha[] escolhas1 = {perguntar,adeus};
          Escolha[] escolhas2 = {atender,ignorar};
+
         // Criação dos capitulos:        
 
         Cap historia = new Cap(
@@ -55,18 +57,21 @@ public class Historia {
         null, 
         luccas, 20);
         
-// definir uma cabeça, só para melhor visualização;
-Cap cabeca = historia;
 
 //dizer quem é proximo de quem:
+
 //Capitulos: historia; missão; casamento; continnua ; ligacao
 // escolhas: proximo, atender, ignorar, adeus;
-perguntar.proximo = continua;
-atender.proximo = ligacao;
-ignorar.proximo = casamento;
-adeus.proximo = missao;
 
-//
+perguntar.setProximo(continua);
+atender.setProximo(ligacao);
+ignorar.setProximo(casamento);
+adeus.setProximo(missao);
+
+// definir uma cabeça, só para melhor visualização;
+
+Cap cabeca = historia;
+
 cabeca.Mostrar();
 
 
